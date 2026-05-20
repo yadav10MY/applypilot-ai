@@ -2,6 +2,7 @@
 
 import { ThemeProvider } from "next-themes"
 import { ReactNode } from "react"
+import { Toaster } from "@/components/ui/toaster"
 
 interface ProvidersProps {
   children: ReactNode
@@ -9,8 +10,10 @@ interface ProvidersProps {
 
 export function Providers({ children }: ProvidersProps) {
   return (
-    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+    <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
       {children}
+      <Toaster />
     </ThemeProvider>
   )
 }
+
